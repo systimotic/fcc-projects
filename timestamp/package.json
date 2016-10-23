@@ -1,0 +1,11 @@
+{
+  "name": "timestamp",
+  "version": "1.0.0",
+  "description": "A timestamp microservice for the FreeCodeCamp challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "systimotic",
+  "license": "ISC"
+}
