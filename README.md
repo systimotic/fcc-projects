@@ -9,7 +9,7 @@ If you want to give these a go for yourself, go to [freecodecamp.com](https://fr
 #### API projects
 - [x] Timestamp microservice
 - [x] Request header parser microservice
-- [ ] URL shortener microservice
+- [x] URL shortener microservice
 - [ ] Image search abstraction layer
 - [ ] File metadata microservice
 
