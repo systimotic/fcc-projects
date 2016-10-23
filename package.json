@@ -1,12 +1,15 @@
 {
-  "name": "timestamp",
+  "name": "fcc-projects",
   "version": "1.0.0",
-  "description": "A timestamp microservice for the FreeCodeCamp challenge",
+  "description": "My FreeCodeCamp projects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "author": "systimotic",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
