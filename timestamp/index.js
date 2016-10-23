@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
 
 function getTimestampType(timestamp) {
-  if (parseInt(timestamp, 10) >= 0) {
+  if (parseInt(timestamp, 10) >= -8640000000000 && parseInt(timestamp, 10) <= 8640000000000) {
     return 'unix';
   }
 
