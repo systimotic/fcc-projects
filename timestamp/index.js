@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+const app = express.Router();
 
 const port = process.env.PORT || 7001;
 
@@ -56,6 +56,4 @@ app.get('/:timestamp', (req, res) => {
   res.json(output);
 });
 
-app.listen(port, () => {
-  console.log('Listening on port', port);
-});
+module.exports = app;
