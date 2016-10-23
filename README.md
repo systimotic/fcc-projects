@@ -8,7 +8,7 @@ If you want to give these a go for yourself, go to [freecodecamp.com](https://fr
 ### Projects
 #### API projects
 - [x] Timestamp microservice
-- [ ] Request header parser microservice
+- [x] Request header parser microservice
 - [ ] URL shortener microservice
 - [ ] Image search abstraction layer
 - [ ] File metadata microservice
