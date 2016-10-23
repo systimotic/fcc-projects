@@ -4,7 +4,7 @@ const app = express.Router();
 
 app.get('/', (req, res) => {
   res.json({
-    ipaddress: req.ip,
+    ipaddress: req.get('x-forwarded-for') || req.ip,
     language: req.acceptsLanguages()[0],
     software: req.get('User-Agent').replace(/.*\((.+)\).*/, '$1')
   });
