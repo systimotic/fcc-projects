@@ -3,7 +3,11 @@ const app = express.Router();
 
 
 app.get('/', (req, res) => {
-  res.send('hi');
+  res.json({
+    ipaddress: req.ip,
+    language: req.acceptsLanguages()[0],
+    software: req.get('User-Agent').replace(/.*\((.+)\).*/, '$1')
+  });
 });
 
 
