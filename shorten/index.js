@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const app = express.Router();
 const ShortLink = require('./shortLink');
 
-const dbPath = process.env.DB || 'localhost:27017/shorten';
+const dbPath = process.env.DB_SHORTEN || 'localhost:27017/shorten';
 
 mongoose.connect(dbPath);
 mongoose.connection.on('error', console.error);
