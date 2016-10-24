@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const ShortLink = new mongoose.Schema({
+const shortLinkSchema = new mongoose.Schema({
   id: String,
   url: String
 });
 
-module.exports = mongoose.model('ShortLink', ShortLink);
+module.exports = mongoose.model('ShortLink', shortLinkSchema);
