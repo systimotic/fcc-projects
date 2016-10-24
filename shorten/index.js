@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 const app = express.Router();
-const ShortLink = require('./shortLink');
+const ShortLink = require('./ShortLink');
 
 const dbPath = process.env.DB_SHORTEN || 'localhost:27017/shorten';
 
