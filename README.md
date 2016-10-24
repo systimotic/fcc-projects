@@ -10,7 +10,7 @@ If you want to give these a go for yourself, go to [freecodecamp.com](https://fr
 - [x] Timestamp microservice
 - [x] Request header parser microservice
 - [x] URL shortener microservice
-- [ ] Image search abstraction layer
+- [x] Image search abstraction layer
 - [ ] File metadata microservice
 
 #### Dynamic web application projects
