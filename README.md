@@ -11,7 +11,7 @@ If you want to give these a go for yourself, go to [freecodecamp.com](https://fr
 - [x] Request header parser microservice
 - [x] URL shortener microservice
 - [x] Image search abstraction layer
-- [ ] File metadata microservice
+- [x] File metadata microservice
 
 #### Dynamic web application projects
 - [ ] Voting app
