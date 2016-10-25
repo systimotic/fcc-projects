@@ -1,9 +1,8 @@
 const express = require('express');
-const mongoosePackage = require('mongoose');
-const mongoose = new mongoosePackage.Mongoose;
+const mongoose = require('mongoose');
 const request = require('request');
 const app = express.Router();
-const Query = require('./querySchema');
+const querySchema = require('./querySchema');
 
 const dbPath = process.env.DB_IMAGE_SEARCH || 'localhost:27017/image-search';
 const key = process.env.BING_SEARCH_KEY;
@@ -13,8 +12,9 @@ function composeURL(query, offset) {
   return `https://api.cognitive.microsoft.com/bing/v5.0/images/search?count=10&safeSearch=Moderate&q=${query}&offset=${offset}`;
 }
 
-mongoose.connect(dbPath);
-mongoose.connection.on('error', console.error);
+const database = mongoose.createConnection(dbPath);
+const Query = database.model('Query', querySchema);
+database.on('error', console.error);
 
 
 app.get('/', (req, res) => {

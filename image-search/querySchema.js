@@ -5,4 +5,4 @@ const querySchema = new mongoose.Schema({
   date: Date
 });
 
-module.exports = mongoose.model('Query', querySchema);
+module.exports = querySchema;

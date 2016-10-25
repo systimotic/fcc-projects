@@ -5,4 +5,4 @@ const shortLinkSchema = new mongoose.Schema({
   url: String
 });
 
-module.exports = mongoose.model('ShortLink', shortLinkSchema);
+module.exports = shortLinkSchema;

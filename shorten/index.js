@@ -2,12 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 const app = express.Router();
-const ShortLink = require('./ShortLink');
+const shortLinkSchema = require('./ShortLink');
 
 const dbPath = process.env.DB_SHORTEN || 'localhost:27017/shorten';
 
-mongoose.connect(dbPath);
-mongoose.connection.on('error', console.error);
+const database = mongoose.createConnection(dbPath);
+const ShortLink = database.model('ShortLink', shortLinkSchema);
+database.on('error', console.error);
 
 
 app.get('/', (req, res) => {
@@ -23,7 +24,6 @@ function generateRandomId() {
 app.get('/new/:url(*)', (req, res) => {
   const baseURL = req.protocol + '://' + req.get('host') + '/shorten/';
   const url = req.params.url;
-  console.log(baseURL, url);
 
   if (!url.match(/^https?:\/\/\w+.[a-z]{2,}.*$/gi)) {
     return res.json({
