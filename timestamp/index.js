@@ -2,9 +2,7 @@ const express = require('express');
 const app = express.Router();
 
 
-app.get('/', (req, res) => {
-  res.send('Hello World! Usage instructions over on https://timestamp-ms.herokuapp.com/');
-});
+app.get('/', (req, res) => res.render('timestamp'));
 
 
 function getTimestampType(timestamp) {

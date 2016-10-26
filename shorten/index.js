@@ -11,9 +11,7 @@ const ShortLink = database.model('ShortLink', shortLinkSchema);
 database.on('error', console.error);
 
 
-app.get('/', (req, res) => {
-  res.send('Hello there! You can fins some usage instructions over on https://little-url.herokuapp.com/');
-});
+app.get('/', (req, res) => res.render('shorten'));
 
 function generateRandomId() {
   return crypto.randomBytes(8)

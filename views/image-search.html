@@ -1,0 +1,63 @@
+{% extends 'api-layout.html' %}
+
+{% block pageTitle %}Image search{% endblock %}
+
+{% block main %}
+<h2>Image search API project</h2>
+<p>Challenge link: <a href="https://www.freecodecamp.com/challenges/image-search-abstraction-layer">Image Search Abstraction Layer</a></p>
+<h3>Usage</h3>
+<p>You can view recent searches, or search for an image yourself.</p>
+
+<section>
+  <h4>Viewing recent searches</h4>
+  <p>To view recent searches, make a <code>GET</code> request to <a href="https://systimotic-fcc.herokuapp.com/image-search/recent">https://systimotic-fcc.herokuapp.com/image-search/recent</a></p>
+  <p>You will get a JSON response, containing an array of objects with the query and the date of the search. Only the 10 most recent searches are displayed.</p>
+  <p>Output:</p>
+  <pre>
+    <code>
+    [
+      {
+        "query": "freecodecamp",
+        "date": "2016-10-25T18:01:01.662Z"
+      },
+      {
+        "query": "tomatoes",
+        "date": "2016-10-25T18:00:48.832Z"
+      },
+      (...)
+    ]
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h4>Searching for images</h4>
+  <p>To do a new searches, make a <code>GET</code> request to <code>"https://systimotic-fcc.herokuapp.com/image-search/[your search term]</code></p>
+  <p>You will get JSON response, containing an array of objects with a link to the image, a title, and the page the image was found on. Only the 10 most relevant searches are displayed.</p>
+  <p>Example URL: <a href="https://systimotic-fcc.herokuapp.com/image-search/freecodecamp">https://systimotic-fcc.herokuapp.com/image-search/freecodecamp</a></p>
+  <p>Output:</p>
+  <pre>
+    <code>
+    [
+      {
+          "image": "https://www.bing.com/cr?IG=B46FCA8262474BC8(...)",
+          "alt": "Freecodecamp",
+          "source": "https://www.bing.com/cr?IG=B46FCA8262474BC8(...)"
+      },
+      {
+          "image": "http://www.bing.com/cr?IG=B46FCA8262474BC8(...)",
+          "alt": "freeCodeCamp - Bay Area Codes",
+          "source": "http://www.bing.com/cr?IG=B46FCA8262474BC8(...)"
+      },
+      (...)
+    ]
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h4>Going to another page</h4>
+  <p>Your search will display only the 10 most relevant results. To view the next results, add the <code>?offset=[page]</code> parameter. The first page is page 0. The maximum is set at 100. If no more results are found, an empty array is returned.</p>
+  <p>Example URL: <a href="https://systimotic-fcc.herokuapp.com/image-search/freecodecamp?offset=1">https://systimotic-fcc.herokuapp.com/image-search/freecodecamp?offset=1</a></p>
+</section>
+{% endblock %}

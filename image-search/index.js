@@ -17,9 +17,7 @@ const Query = database.model('Query', querySchema);
 database.on('error', console.error);
 
 
-app.get('/', (req, res) => {
-  res.send('Hello there!');
-});
+app.get('/', (req, res) => res.render('image-search'));
 
 app.get('/recent', (req, res) => {
   Query.find({}, { _id: 0, __v: 0 }).sort({ date: -1 }).limit(10).exec((err, docs) => {

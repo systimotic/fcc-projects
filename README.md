@@ -5,6 +5,8 @@ Feel free to take a look around!
 
 If you want to give these a go for yourself, go to [freecodecamp.com](https://freecodecamp.com).
 
+You can take a look at my completed projects on [systimotic-fcc.herokuapp.com](https://systimotic-fcc.herokuapp.com/)
+
 ### Projects
 #### API projects
 - [x] Timestamp microservice

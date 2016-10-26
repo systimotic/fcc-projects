@@ -1,0 +1,17 @@
+{% extends 'api-layout.html' %}
+
+{% block pageTitle %}Filesize{% endblock %}
+
+{% block main %}
+<h2>Filesize API project</h2>
+<p>Challenge link: <a href="https://www.freecodecamp.com/challenges/file-metadata-microservice">File Metadata Microservice</a></p>
+
+<p>Submit a file through this form, and you'll get a JSON response with the file's size in bytes.</p>
+<p>You can access the API by submitting a <code>POST</code> request with a FormData object to the <code>/submit</code> route.</p>
+
+<form method="post" action="/filesize/submit" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

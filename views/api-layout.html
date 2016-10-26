@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block pageTitle %}API project{% endblock %} | FreeCodeCamp API projects</title>
+  <link rel="stylesheet" href="/api-projects.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <h1><a href="/">FreeCodeCamp API projects</a></h1>
+    <ul>
+      <li><a href="/">index</a></li>
+      <li><a href="/timestamp">timestamp</a></li>
+      <li><a href="/whoami">whoami</a></li>
+      <li><a href="/shorten">shorten</a></li>
+      <li><a href="/image-search">image-search</a></li>
+      <li><a href="/filesize">filesize</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    {% block main %}
+    This is the main content
+    {% endblock %}
+  </main>
+</body>
+</html>

@@ -5,9 +5,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/filesize.html');
-});
+app.get('/', (req, res) => res.render('filesize'));
 
 app.post('/submit', upload.single('file'), (req, res) => {
   if (!req.file) {

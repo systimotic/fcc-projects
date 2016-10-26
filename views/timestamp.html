@@ -1,0 +1,54 @@
+{% extends 'api-layout.html' %}
+
+{% block pageTitle %}Timestamp{% endblock %}
+
+{% block main %}
+<h2>Timestamp API project</h2>
+<p>Challenge link: <a href="https://www.freecodecamp.com/challenges/timestamp-microservice">Timestamp Microservice</a></p>
+<h3>Usage</h3>
+<p>You can pass a parameter that is either a Unix timestamp or a natural language date.</p>
+
+<section>
+  <h4>Unix timestamp</h4>
+  <p>Here's what a Unix timestamp looks like: <code>2476915200</code></p>
+  <p>Example URL: <a href="https://systimotic-fcc.herokuapp.com/timestamp/2476915200">https://systimotic-fcc.herokuapp.com/timestamp/2476915200</a></p>
+  <p>Output:</p>
+  <pre>
+    <code>
+      {
+        "unix": 2476915200,
+        "natural": "June 28, 2048"
+      }
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h4>Natural language date</h4>
+  <p>Here's what a natural language date looks like: <code>August 5, 2005</code></p>
+  <p>Example URL: <a href="https://systimotic-fcc.herokuapp.com/timestamp/August%205,%202005">https://systimotic-fcc.herokuapp.com/timestamp/August 5, 2005</a></p>
+  <p>Output:</p>
+  <pre>
+    <code>
+      {
+        "unix": 1123200000,
+        "natural": "August 5, 2005"
+      }
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h3>Errors</h3>
+  <h4>Invalid dates</h4>
+  <p>If you pass an invalid date, the values in the object are set to null.</p>
+  <pre>
+    <code>
+      {
+        "unix": null,
+        "natural": null
+      }
+    </code>
+  </pre>
+</section>
+{% endblock %}

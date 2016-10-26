@@ -1,0 +1,56 @@
+{% extends 'api-layout.html' %}
+
+{% block pageTitle %}URL Shortener{% endblock %}
+
+{% block main %}
+<h2>URL Shortener API project</h2>
+<p>Challenge link: <a href="https://www.freecodecamp.com/challenges/url-shortener-microservice">URL Shortener Microservice</a></p>
+<h3>Usage</h3>
+<p>You can create a new shortened URL, or use an existing one.</p>
+
+<section>
+  <h4>Generating a new shortened URL</h4>
+  <p>To create a new shortened URL, make a <code>GET</code> request to <code>https://systimotic-fcc.herokuapp.com/shorten/new/[yourURL]</code></p>
+  <p>Example URL: <a href="https://systimotic-fcc.herokuapp.com/shorten/new/https://freecodecamp.com">https://systimotic-fcc.herokuapp.com/shorten/new/https://freecodecamp.com</a></p>
+  <p>Output:</p>
+  <pre>
+    <code>
+      {
+        "original_url": "https://freecodecamp.com",
+        "short_url": "http://systimotic-fcc.herokuapp.com/shorten/L5pUv5k9pV"
+      }
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h4>Using a shortened URL</h4>
+  <p>Using a shortened URL will redirect you to the original URL.</p>
+  <p>Example: <a href="http://systimotic-fcc.herokuapp.com/shorten/L5pUv5k9pV">http://systimotic-fcc.herokuapp.com/shorten/L5pUv5k9pV</a> redirects to <a href="https://freecodecamp.com">https://freecodecamp.com</a></p>
+</section>
+
+<section>
+  <h3>Errors</h3>
+  <h4>Invalid URL</h4>
+  <p>If you pass an invalid URL, you get an error.</p>
+  <p>Example URL: <a href="https://systimotic-fcc.herokuapp.com/shorten/new/freecodecamp">https://systimotic-fcc.herokuapp.com/shorten/new/freecodecamp</a></p>
+  <pre>
+    <code>
+      {
+        "error": "Wrong URL format. Please enter a valid URL and try again."
+      }
+    </code>
+  </pre>
+
+  <h4>Unknown ID</h4>
+  <p>If you browse to a URL with an unknow ID, you get an error</p>
+  <p>Example URL: <a href="https://systimotic-fcc.herokuapp.com/shorten/not-a-valid-ID">https://systimotic-fcc.herokuapp.com/shorten/not-a-valid-ID</a></p>
+  <pre>
+    <code>
+      {
+        "error": "There is no link with this ID."
+      }
+    </code>
+  </pre>
+</section>
+{% endblock %}
